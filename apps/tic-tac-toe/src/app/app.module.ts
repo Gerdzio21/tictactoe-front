@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { BoardModule } from './board/board.module';
-import { SquareModule } from './square/square.module';
 import { DialogRegistrationComponent } from './register/dialog-registration/dialog-registration.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { GameComponent } from './game/game.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {MatDividerModule} from "@angular/material/divider";
+import {BoardComponent} from "./game/board/board.component";
+import {SquareComponent} from "./game/board/square/square.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +28,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RegisterComponent,
     GameComponent,
     PageNotFoundComponent,
+    BoardComponent,
+    SquareComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    BoardModule,
-    SquareModule,
     MatDialogModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -43,6 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatInputModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

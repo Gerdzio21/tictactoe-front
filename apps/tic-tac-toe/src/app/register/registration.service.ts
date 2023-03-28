@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {User} from "./interface/user";
+import {User} from "./user";
 import {RegisterService} from "./register.service";
 
 @Injectable({

@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DialogRegistrationComponent} from "./dialog-registration/dialog-registration.component";
-import {UserService} from "../service/user.service";
 import {MatDialog} from "@angular/material/dialog";
-import {RegistrationService} from "../registration.service";
+import {RegistrationService} from "./registration.service";
 import {Router} from "@angular/router";
 import {HttpStatusCode} from "@angular/common/http";
 
@@ -15,8 +14,7 @@ export class RegisterComponent implements OnInit {
   uid?: string;
   unauthorized = false;
 
-  constructor(private userService: UserService,
-              public dialog: MatDialog,
+  constructor(public dialog: MatDialog,
               private registrationService: RegistrationService,
               private router: Router) {
   }
@@ -29,7 +27,6 @@ export class RegisterComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogRegistrationComponent, {disableClose: true});
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (result != undefined) {
         this.onCreateUser(result);
       } else

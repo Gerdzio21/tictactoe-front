@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="gameInformation">
+    <h2 >It is
+      <span *ngIf="game?.mySign===game?.turnSign" style="color:red">Your</span>
+      <span *ngIf="game?.mySign!==game?.turnSign" style="color:red">{{game?.turnSign}}</span>
+      turn
+    </h2>
+    <div *ngIf="isGameOver()">
+    <h3 *ngIf="amWinner()" style="color:yellow">
+        You won the game!
+    </h3>
+    <h3 *ngIf="!amWinner()" style="color:yellow">
+      Player {{winner?.nick}} won the game!
+    </h3>
+    </div>
+    <p>Your opponent <span style="color: palevioletred">{{game?.opponentNick}}</span> plays as <span style="color: palevioletred">{{opponentSign}}</span> </p>
+  </div>
+  <br/>
+
+  <div class="gameContent">
+  <div class="board">
+      <app-square
+          *ngFor="let val of squares; let i = index"
+          [value] = "val"
+          (click) = "makeMove(i)">
+      </app-square>
+  </div>
+  </div>
+</div>

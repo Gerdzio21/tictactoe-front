@@ -1,4 +1,4 @@
-export interface Move {
+export interface MoveParams {
   uid: string,
   field: number
 }

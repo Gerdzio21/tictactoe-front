@@ -1,6 +1,10 @@
 <div *ngIf="isWaitingForOponent()" id="container">
   <mat-spinner></mat-spinner>
+  <h1>Waiting for opponent</h1>
 </div>
+<div id="gameOptions">
+<button mat-raised-button *ngIf="isGameExsist()" (click)="newGame()" id="newGameBtn">Start new game</button>
+</div>
+<app-board *ngIf="isGameExsist()"></app-board>
 
-<app-board *ngIf="gameExsist()"></app-board>
 
