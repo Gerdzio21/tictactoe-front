@@ -6,11 +6,12 @@ import {RegistrationService} from "./register/registration.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'tic-tac-toe';
   version = 'alpha 0.1';
 
-  constructor(public registrationService: RegistrationService) {}
+  constructor(public registrationService: RegistrationService) {
+  }
 
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {MoveParams} from "./move-params";
@@ -10,17 +10,20 @@ import {GameStatus} from "./game-status";
 })
 export class BoardService {
   private baseUrl = environment.baseUrl;
-  constructor(private http: HttpClient) { }
 
-  makeMove(uid: string, field: number){
-    const params: MoveParams ={
+  constructor(private http: HttpClient) {
+  }
+
+  makeMove(uid: string, field: number) {
+    const body: MoveParams = {
       uid: uid,
       field: field
     }
-    return this.http.post(`${this.baseUrl}/game/move`, params)
+    return this.http.post(`${this.baseUrl}/game/move`, body)
   }
-  getBoard(uid: string): Observable<GameStatus>{
-    const params = new HttpParams().set('uid',uid);
+
+  getBoard(uid: string): Observable<GameStatus> {
+    const params = new HttpParams().set('uid', uid);
     return this.http.get<GameStatus>(`${this.baseUrl}/game`, {params})
   }
 }

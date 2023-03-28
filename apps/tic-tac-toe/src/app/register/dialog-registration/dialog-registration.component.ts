@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import {Component, OnInit} from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 
@@ -8,17 +8,19 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './dialog-registration.component.html',
   styleUrls: ['./dialog-registration.component.css'],
 })
-export class DialogRegistrationComponent implements OnInit{
+export class DialogRegistrationComponent implements OnInit {
   userName?: string;
   registrationForm!: FormGroup;
 
 
   constructor(
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<DialogRegistrationComponent>) {}
-  ngOnInit(){
+    public dialogRef: MatDialogRef<DialogRegistrationComponent>) {
+  }
+
+  ngOnInit() {
     this.registrationForm = this.fb.group({
-      name: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z ]*$')])
+      name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')])
     })
   }
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import {Observable, tap} from 'rxjs';
 import {RegistrationService} from "./registration.service";
@@ -7,7 +7,8 @@ import {RegistrationService} from "./registration.service";
   providedIn: 'root'
 })
 export class IsRegisteredGuard implements CanActivate {
-  constructor(private registrationService: RegistrationService, private router: Router) {}
+  constructor(private registrationService: RegistrationService, private router: Router) {
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,

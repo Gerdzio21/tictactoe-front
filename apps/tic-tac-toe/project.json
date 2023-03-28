@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/tic-tac-toe",
         "index": "apps/tic-tac-toe/src/index.html",
@@ -16,7 +18,9 @@
           "apps/tic-tac-toe/src/favicon.ico",
           "apps/tic-tac-toe/src/assets"
         ],
-        "styles": ["apps/tic-tac-toe/src/styles.scss"],
+        "styles": [
+          "apps/tic-tac-toe/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -81,7 +85,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/tic-tac-toe"],
+      "outputs": [
+        "coverage/apps/tic-tac-toe"
+      ],
       "options": {
         "jestConfig": "apps/tic-tac-toe/jest.config.ts",
         "passWithNoTests": true

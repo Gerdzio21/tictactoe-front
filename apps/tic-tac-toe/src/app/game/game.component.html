@@ -3,7 +3,7 @@
   <h1>Waiting for opponent</h1>
 </div>
 <div id="gameOptions">
-<button mat-raised-button *ngIf="isGameExsist()" (click)="newGame()" id="newGameBtn">Start new game</button>
+  <button mat-raised-button *ngIf="isGameExsist()" (click)="newGame()" id="newGameBtn">Start new game</button>
 </div>
 <app-board *ngIf="isGameExsist()"></app-board>
 

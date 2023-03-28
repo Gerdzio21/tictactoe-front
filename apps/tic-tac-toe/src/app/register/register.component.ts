@@ -38,9 +38,9 @@ export class RegisterComponent implements OnInit {
   onCreateUser(nick: string): void {
     this.registrationService.register(nick).subscribe(
       (response) => {
-        console.log(response);
+        //console.log(response);
         this.uid = response.uid;
         this.router.navigate(['/game']);
-      },(error:any)=> error.status == HttpStatusCode.Unauthorized ? this.unauthorized = true : 0);
+      }, (error: any) => error.status == HttpStatusCode.Unauthorized ? this.unauthorized = true : 0);
   }
 }

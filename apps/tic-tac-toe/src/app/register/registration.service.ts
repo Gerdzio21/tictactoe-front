@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, tap} from "rxjs";
 import {User} from "./user";
 import {RegisterService} from "./register.service";
+import {HttpErrorResponse} from "@angular/common/http";
+import {GameService} from "../game/game.service";
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,16 @@ export class RegistrationService {
 
   constructor(
     private RegisterService: RegisterService,
+    private gameService: GameService
   ) {
     this._isRegistered$.next(!!this.uid);
+    if(this.uid != null) {
+      this.gameService.deleteGame(this.uid).subscribe(response => {
+      }, (error: HttpErrorResponse) => {
+        //console.log(error)
+      });
+    }
+    sessionStorage.clear();
   }
 
   register(nick: string): Observable<User> {
