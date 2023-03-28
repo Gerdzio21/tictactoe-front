@@ -14,10 +14,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   createUser(nick: string): Observable<User>{
-    // const headers = new Headers();
-    // headers.append('Access-Control-Allow-Headers', 'Content-Type');
-    // headers.append('Access-Control-Allow-Methods', 'GET');
-    // headers.append('Access-Control-Allow-Origin', '*');
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post<User>(`${this.baseUrl}/register`, JSON.stringify({nick: nick}),{headers: headers});
   }

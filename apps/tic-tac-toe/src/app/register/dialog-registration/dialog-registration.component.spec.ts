@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogSelectNameOverviewComponent } from './dialog-registration.component';
+import { DialogRegistrationComponent } from './dialog-registration.component';
 
 describe('DialogSelectNameOverviewComponent', () => {
-  let component: DialogSelectNameOverviewComponent;
-  let fixture: ComponentFixture<DialogSelectNameOverviewComponent>;
+  let component: DialogRegistrationComponent;
+  let fixture: ComponentFixture<DialogRegistrationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogSelectNameOverviewComponent],
+      declarations: [DialogRegistrationComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DialogSelectNameOverviewComponent);
+    fixture = TestBed.createComponent(DialogRegistrationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
