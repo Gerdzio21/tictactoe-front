@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Wybierz swoje imie!</h1>
+<div mat-dialog-content>
+  <form [formGroup]="registrationForm">
+  <p>Aby rozpocząć grę  wybierz swoje imie</p>
+  <mat-form-field>
+    <mat-label>Imię</mat-label>
+    <input matInput placeholder="Imię" formControlName="name" (keydown.enter)="onOkClick()"/>
+  </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+<!--  <button mat-button (click)="onNoClick()">No Thanks</button>-->
+  <button mat-raised-button [disabled]="!registrationForm.valid || registrationForm.get('name')?.value === ''" (click)="onOkClick()">Ok</button>
+</div>

@@ -16,7 +16,7 @@
           "apps/tic-tac-toe/src/favicon.ico",
           "apps/tic-tac-toe/src/assets"
         ],
-        "styles": ["apps/tic-tac-toe/src/styles.css"],
+        "styles": ["apps/tic-tac-toe/src/styles.scss"],
         "scripts": []
       },
       "configurations": {

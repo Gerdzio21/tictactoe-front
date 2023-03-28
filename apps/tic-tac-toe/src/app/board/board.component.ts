@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Game} from "../interface/game";
+import {UserService} from "../service/user.service";
 
 @Component({
   selector: 'app-board',
@@ -8,12 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class BoardComponent implements OnInit {
   squares : any[] = [];
   xIsNext?: boolean;
+  isPlayerCreated?: boolean;
   winner?: string;
+  game?: Game;
+  //uid: string;
 
+  constructor(private userService: UserService) {}
   ngOnInit(): void {
       this.newGame();
   }
   newGame():void {
+    //this.game = this.userService.getGame(this.uid);
     this.squares = Array(9).fill(undefined);
     this.winner = undefined;
     this.xIsNext = true;
