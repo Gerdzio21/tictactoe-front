@@ -1,0 +1,6 @@
+<div *ngIf="isWaitingForOponent()" id="container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<app-board *ngIf="gameExsist()"></app-board>
+
